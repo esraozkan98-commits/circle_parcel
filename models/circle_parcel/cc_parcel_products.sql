@@ -2,11 +2,7 @@
 -- stg_cc_parcel_products ile cc_parcel'i birleştirerek ürün bazında tablo oluşturur.
 
 {{ config(
-    materialized='table',
-    partition_by={
-        "field": "date_purchase",
-        "data_type": "date"
-    }
+    materialized='table'
 ) }}
 
 SELECT
