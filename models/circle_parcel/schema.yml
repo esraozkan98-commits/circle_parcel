@@ -1,0 +1,25 @@
+# Bu dosya cc_parcel ve cc_parcel_products modellerinin testlerini içerir.
+
+version: 2
+
+models:
+  - name: cc_parcel
+    description: "Parcel KPI modeli - paket bazında hesaplanmış metrikler"
+    columns:
+      - name: parcel_id
+        description: "Paketin benzersiz kimliği"
+        tests:
+          - unique
+          - not_null
+
+  - name: cc_parcel_products
+    description: "Ürün bazında parcel detay modeli"
+    columns:
+      - name: parcel_id
+        description: "Pakete ait foreign key"
+        tests:
+          - not_null
+      - name: model_name
+        description: "Ürün model adı"
+        tests:
+          - not_null
