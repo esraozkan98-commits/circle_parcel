@@ -4,7 +4,6 @@ version: 2
 
 sources:
   - name: raw_data_circle
-    # BigQuery'deki ham veri dataset'i
     database: primordial-mile-449805-j0
     schema: raw_data_circle
     tables:
@@ -14,6 +13,8 @@ sources:
 models:
   - name: stg_cc_parcel
     description: "Ham parcel verisinin staging modeli"
+    config:
+      schema: parcel_dbt_dev_staging
     columns:
       - name: parcel_id
         description: "Paketin benzersiz kimliği"
@@ -23,6 +24,8 @@ models:
 
   - name: stg_cc_parcel_products
     description: "Ham parcel ürün verisinin staging modeli"
+    config:
+      schema: parcel_dbt_dev_staging
     columns:
       - name: parcel_id
         description: "Pakete ait foreign key"
